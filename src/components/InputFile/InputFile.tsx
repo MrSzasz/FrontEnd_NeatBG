@@ -38,7 +38,7 @@ const InputFile = (): React.ReactElement => {
         opacityValue: 100,
         noiseValue: false,
       },
-      imgUrl: "/examples/example1.jpg",
+      imgUrl: "example1.jpg",
       imgAlt: "Example image 1",
     },
     {
@@ -50,7 +50,7 @@ const InputFile = (): React.ReactElement => {
         opacityValue: 100,
         noiseValue: false,
       },
-      imgUrl: "/examples/example2.jpg",
+      imgUrl: "example2.jpg",
       imgAlt: "Example image 2",
     },
     {
@@ -62,7 +62,7 @@ const InputFile = (): React.ReactElement => {
         opacityValue: 100,
         noiseValue: false,
       },
-      imgUrl: "/examples/example3.jpg",
+      imgUrl: "example3.jpg",
       imgAlt: "Example image 3",
     },
     {
@@ -74,7 +74,7 @@ const InputFile = (): React.ReactElement => {
         opacityValue: 100,
         noiseValue: false,
       },
-      imgUrl: "/examples/example4.jpg",
+      imgUrl: "example4.jpg",
       imgAlt: "Example image 4",
     },
   ];
@@ -227,7 +227,7 @@ const InputFile = (): React.ReactElement => {
           </div>
           <div className="grid items-center justify-center gap-4 rounded-lg p-4 pt-0">
             <h2 className="text-center text-2xl">Select an example</h2>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            <div className="hidden grid-cols-2 gap-4 md:grid md:grid-cols-4">
               {examplesData.map((example, i) => (
                 <ExampleButton
                   key={i}
@@ -239,7 +239,34 @@ const InputFile = (): React.ReactElement => {
                       true,
                     );
                   }}
-                  imgUrl={example.imgUrl}
+                  imgUrl={`/examples/${example.imgUrl}`}
+                  imgAlt={example.imgAlt}
+                />
+              ))}
+
+              <Button
+                disabled={!example}
+                variant="outline"
+                className="col-span-4 flex w-full items-center justify-center border border-white/25 bg-transparent hover:bg-white/5"
+                onClick={() => downloadCanvas()}
+              >
+                <LuDownload className="mr-2 h-4 w-4" />
+                Download
+              </Button>
+            </div>
+            <div className="grid grid-cols-2 gap-4 md:hidden md:grid-cols-4">
+              {examplesData.map((example, i) => (
+                <ExampleButton
+                  key={i}
+                  onClickFn={(e: React.MouseEvent) => {
+                    setExample(true);
+                    imgToCanvas(
+                      example.filters,
+                      (e.target as HTMLImageElement).src,
+                      true,
+                    );
+                  }}
+                  imgUrl={`/examples/mobile/${example.imgUrl}`}
                   imgAlt={example.imgAlt}
                 />
               ))}

@@ -17,7 +17,7 @@ const ExampleButton = ({
         }}
       >
         <img
-          className="h-16 w-24 cursor-pointer rounded border border-white/25 object-cover transition-all hover:scale-105"
+          className="h-10 w-16 cursor-pointer rounded border border-white/25 object-cover transition-all hover:scale-105 md:h-16 md:w-24"
           src={imgUrl}
           alt={imgAlt}
         />
