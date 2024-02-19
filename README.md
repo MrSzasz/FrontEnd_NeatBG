@@ -17,6 +17,7 @@ Welcome to _NeatBG_, where you can transform your images into beautiful backgrou
 ## Introduction
 
 _NeatBG_ is a tool for creating beautiful backgrounds effortlessly. Transform your images into captivating website backgrounds with our intuitive customization features. Adjust blur, brightness, saturation and contrast to achieve the perfect look. Create and download to enhance your online presence.
+This web is based on [this video from DesignCourse](https://youtu.be/SJz2dKxvquE?si=XOn-6D7tjdOiQvLJ).
 
 ## Features
 

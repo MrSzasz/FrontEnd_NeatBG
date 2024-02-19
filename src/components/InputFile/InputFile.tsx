@@ -205,17 +205,6 @@ const InputFile = (): React.ReactElement => {
             }}
           />
         </div>
-        {/* TODO => Add noise */}
-        {/* <div>
-          <Label htmlFor="NoiseSelect">Noise</Label>
-          <Checkbox
-            name="NoiseSelect"
-            onCheckedChange={(e) => {
-              setFilterValues({ ...filterValues, noiseValue: Boolean(e) });
-              imgToCanvas({ ...filterValues, noiseValue: Boolean(e) }, imgUrl);
-            }}
-          />
-        </div> */}
       </div>
       {!imgUrl && (
         <>
